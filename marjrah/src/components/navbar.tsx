@@ -75,7 +75,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className={`py-2 z-40 bg-white w-full ${stickyClass}`}>
+        <nav className={`py-2 z-40 bg-white w-full fixed`}>
             <div className="md:w-11/12 w-full md:px-0 px-3 mx-auto">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex gap-4 items-center">
