@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
+import logo from "../assets/Adopet_logo.png"
 
 const customStyles = {
     content: {
@@ -17,8 +18,8 @@ export const PageLinkContainer = styled.div`
   a {
     background-image: linear-gradient(
             to right,
-            #6a9b30,
-            #6a9b30 50%,
+            #ff4c68,
+            #ff4c68 50%,
             #000 50%
     );
     background-size: 200% 100%;
@@ -33,7 +34,7 @@ export const PageLinkContainer = styled.div`
 
   a:before {
     content: '';
-    background: #6a9b30;
+    background: #ff4c68;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -53,13 +54,6 @@ export const PageLinkContainer = styled.div`
 `
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const [modal, setModal] = useState(false);
-
-    const handleDelete = () => {
-        setModal(false);
-    }
 
     const [stickyClass, setStickyClass] = useState('relative');
 
@@ -74,16 +68,18 @@ const Navbar = () => {
     const stickNavbar = () => {
         if (window !== undefined) {
             let windowHeight = window.scrollY;
-            windowHeight > 0 ? setStickyClass('fixed') : setStickyClass('relative');
+            windowHeight > 500 ? setStickyClass('fixed') : setStickyClass('relative');
         }
     };
 
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <nav className={`py-2 z-40 bg-white w-full fixed`}>
+        <nav className={`py-2 z-40 bg-white w-full ${stickyClass}`}>
             <div className="md:w-11/12 w-full md:px-0 px-3 mx-auto">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex gap-4 items-center">
-                        {/*<img className="h-[50px] w-[100px]" src={""} alt="tree" />*/}
+                        <img className="mt-2 h-[80px] w-[170px]" src={logo} alt="tree" />
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
                                 <Link
@@ -100,7 +96,15 @@ const Navbar = () => {
                                     className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
-                                        <a>Blogs</a>
+                                        <a>Find Pets</a>
+                                    </PageLinkContainer>
+                                </Link>
+                                <Link
+                                    to="/"
+                                    className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                >
+                                    <PageLinkContainer>
+                                        <a>Pet Care</a>
                                     </PageLinkContainer>
                                 </Link>
                                 <Link
@@ -109,14 +113,6 @@ const Navbar = () => {
                                 >
                                     <PageLinkContainer>
                                         <a>About Us</a>
-                                    </PageLinkContainer>
-                                </Link>
-                                <Link
-                                    to="/"
-                                    className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                                >
-                                    <PageLinkContainer>
-                                        <a>Membership</a>
                                     </PageLinkContainer>
                                 </Link>
                                 <Link
@@ -133,9 +129,14 @@ const Navbar = () => {
 
                     <Link to="/">
                         <div className="hidden md:block hover:bg-button-primary px-4 py-1 rounded-xl">
-                            <PageLinkContainer>
-                                <button onClick={() => setModal(true)} className="">Donate</button>
-                            </PageLinkContainer>
+                            <div className="flex">
+                                <PageLinkContainer>
+                                    <a className="mx-3">Login</a>
+                                </PageLinkContainer>
+                                <PageLinkContainer>
+                                    <a className="mx-3">SignUp</a>
+                                </PageLinkContainer>
+                            </div>
                         </div>
                     </Link>
                     <div className="-mr-2 flex md:hidden">
@@ -169,7 +170,15 @@ const Navbar = () => {
                                 className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 <PageLinkContainer>
-                                    <a>Blogs</a>
+                                    <a>Find Pets</a>
+                                </PageLinkContainer>
+                            </Link>
+                            <Link
+                                to="/"
+                                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                            >
+                                <PageLinkContainer>
+                                    <a>Pet Care</a>
                                 </PageLinkContainer>
                             </Link>
                             <Link
@@ -185,15 +194,7 @@ const Navbar = () => {
                                 className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 <PageLinkContainer>
-                                    <a>Membership</a>
-                                </PageLinkContainer>
-                            </Link>
-                            <Link
-                                to="/"
-                                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                            >
-                                <PageLinkContainer>
-                                    <a>Contact</a>
+                                    <a>Contact Us</a>
                                 </PageLinkContainer>
                             </Link>
                             <Link
@@ -201,7 +202,10 @@ const Navbar = () => {
                                 className="hover:bg-primary-base bg-button-primary text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 <PageLinkContainer>
-                                    <button className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">Donate</button>
+                                    <button className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">Login</button>
+                                </PageLinkContainer>
+                                <PageLinkContainer>
+                                    <button className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">SignUp</button>
                                 </PageLinkContainer>
                             </Link>
                         </div>
