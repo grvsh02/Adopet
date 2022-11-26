@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'strawberry.django',
+    'tinymce',
     'user',
     'pets',
     'blogs',
