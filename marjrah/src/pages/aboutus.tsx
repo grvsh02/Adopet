@@ -24,9 +24,18 @@ const Aboutus = () => {
         </div>
 
             <div className="relative flex flex-row mt-7">
-                <div className="w-2/5 pr-60 mr-60 ml-7 mb-7">
+                <div className=" grid grid-rows-2 grid-flow-col gap-2 w-2/5 pr-60 mr-60 ml-7 mb-7">
                     <div className="mt-7">Animals rescued so far
                         <div className="text-rose-500 text-5xl"><CountUp end={69} duration={2}/></div>
+                    </div>
+                    <div className="mt-7">Complaints addresed so far
+                        <div className="text-rose-500 text-5xl"><CountUp end={128} duration={2}/></div>
+                    </div>
+                    <div className="mt-7">Blogs written so far
+                        <div className="text-rose-500 text-5xl"><CountUp end={99} duration={2}/></div>
+                    </div>
+                    <div className="mt-7">donations collected
+                        <div className="text-rose-500 text-5xl">₹<CountUp end={25} duration={2}/>.2k</div>
                     </div>
                 </div>
                 <div className=" flex flex-row pb-10 w-2/5">
