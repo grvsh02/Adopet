@@ -31,7 +31,7 @@ class PetsQuery:
         )
 
     @strawberry.field
-    def product(
+    def pet(
             self,
             id: int,
     ) -> PetType:
