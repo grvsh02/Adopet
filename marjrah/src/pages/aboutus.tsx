@@ -7,7 +7,7 @@ const Aboutus = () => {
     return (
         <div className="flex flex-col">
         <div className="relative flex flex-col justify-center min-h-screen ">
-            <h1 className="text-6xl font-semibold text-purple-700">
+            <h1 className="text-6xl font-semibold text-rose-500">
                 About Us
             </h1>
         </div>
@@ -20,6 +20,9 @@ const Aboutus = () => {
         <div className="w-2/5 pl-60 ml-60 ">
             <img src={dog} alt="kukkur"/>
         </div>
+            <div>
+
+            </div>
 
         </div>
         </div>
