@@ -6,3 +6,8 @@ from typing import Optional
 class ProfileInput:
     first_name: str
     last_name: str
+    email: str
+
+__all__ = [
+    'ProfileInput',
+]
