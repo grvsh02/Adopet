@@ -5,9 +5,11 @@ from strawberry.tools import merge_types
 
 from user.graphql.mutations import UserMutations
 from user.graphql.queries.users import ProductQueries
+from pets.graphql.queries.pets_queries import PetsQuery
+# from pets.graphql.mutations import PetMutations
 
 Mutations = merge_types('Mutations', (UserMutations,))
-Query = merge_types('Queries', (ProductQueries,))
+Query = merge_types('Queries', (ProductQueries, PetsQuery, ))
 
 extensions = [
     QueryDepthLimiter(max_depth=10),
