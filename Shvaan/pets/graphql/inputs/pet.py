@@ -4,7 +4,7 @@ from typing import Optional
 
 @strawberry.input
 class PetInput:
-    id: Optional[strawberry.ID] = None
+    # id: Optional[strawberry.ID] = None
     name: str
     age: Optional[int] = None
     breed: Optional[str] = None

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'strawberry.django',
     'user',
     'pets',
+    'blogs',
 ]
 
 MIDDLEWARE = [
