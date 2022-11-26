@@ -1,16 +1,20 @@
 import React from "react";
 import dog from "../assets/dog.png"
 import CountUp from 'react-countup';
+import pawprint from "../assets/pawprint.png"
 
 
 
 const Aboutus = () => {
     return (
         <div className="flex flex-col">
-        <div className="relative flex flex-col pb-14  ">
-            <h1 className="text-6xl font-semibold text-rose-500">
-                About Us
-            </h1>
+        <div className=" h-2/5 w-full bg-[#ff4c68]  mb-7">
+            <div className="flex items-center justify-between h-full">
+                <div className="text-white font-semibold text-4xl ml-32">
+                    <p>About Us</p>
+            </div>
+        </div>
+            <img src={pawprint} alt="dog" className="mx-32 my-6"/>
         </div>
         <div className="relative flex flex-row mb-7">
         <div className=" flex flex-row pb-10 w-2/5">
@@ -19,12 +23,12 @@ const Aboutus = () => {
             </p>
         </div>
         <div className="w-2/5 pl-60 ml-60 ">
-            <img src={dog} alt="kukkur"/>
+            <img src={dog} alt="hund"/>
         </div>
         </div>
 
             <div className="relative flex flex-row mt-7">
-                <div className=" grid grid-rows-2 grid-flow-col gap-2 w-2/5 pr-60 mr-60 ml-7 mb-7">
+                <div className=" grid grid-rows-2 grid-flow-col gap-2 w-2/5 pr-60 mr-60 ml-7 mb-7 object-right-top">
                     <div className="mt-7">Animals rescued so far
                         <div className="text-rose-500 text-5xl"><CountUp end={69} duration={2}/></div>
                     </div>
