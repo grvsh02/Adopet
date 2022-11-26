@@ -46,7 +46,9 @@ class User(models.Model):
         choices=role_choices,
         max_length=50,
         default='Customer',
-        verbose_name='Role'
+        verbose_name='Role',
+        null=True,
+        blank=True,
     )
     phone = PhoneNumberField(
         null=True, blank=True,
