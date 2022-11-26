@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache
+.idea
+bin/
+build/
+env/
+htmlcov/
+lib/
+venv/
+.coverage
+db.sqlite3
+.env
+.Python
+*.pyc
+.vscode
