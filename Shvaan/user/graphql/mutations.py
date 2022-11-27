@@ -2,6 +2,10 @@ import strawberry
 
 # from homezy_backend.utils.email import send_verification_email
 from user.graphql.inputs.user import ProfileInput
+from strawberry_jwt_auth.decorator import login_required
+from django.contrib.auth import authenticate
+from ..models import User
+import re
 
 
 @strawberry.type
@@ -9,8 +13,6 @@ class UserMutations:
 
     @strawberry.mutation
     def signup(self, info, password: str, email: str, profile: ProfileInput) -> int:
-        from ..models import User
-        import re
 
         regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
         if not regex.match(email):
@@ -23,9 +25,12 @@ class UserMutations:
         )
         username = email.split("@")[0]
         user.username = username
-        user.set_password(password)
-        user.save()
+        # user.set_password(password)
 
+        user.save()
+        # setattr(info.context, "userID", user.id)
+        # setattr(info.context.request, "issueNewTokens", True)
+        # setattr(info.context.request, "clientID", user.id)
         # if not send_verification_email(user.id, email, profile.first_name):
         #     user.delete()
         #     raise Exception("Unable to send verification email")
@@ -47,7 +52,6 @@ class UserMutations:
 
     @strawberry.mutation
     def login(self, info, email: str, password: str) -> bool:
-        from django.contrib.auth import authenticate
         user = authenticate(email=email, password=password)
         if user is None:
             raise Exception("Invalid credentials")
@@ -61,6 +65,16 @@ class UserMutations:
     @strawberry.mutation
     def logout(self, info) -> bool:
         setattr(info.context.request, "revokeTokens", True)
+        return True
+
+    @strawberry.mutation
+    @login_required
+    def change_password(self, info, old_password: str, new_password: str) -> bool:
+        user = info.context.user
+        if not user.check_password(old_password):
+            raise Exception("Invalid password")
+        user.set_password(new_password)
+        user.save()
         return True
 
 
