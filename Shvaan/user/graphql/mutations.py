@@ -12,7 +12,7 @@ import re
 class UserMutations:
 
     @strawberry.mutation
-    def signup(self, info, password: str, email: str, profile: ProfileInput) -> int:
+    def signup(self, info, email: str ,password: str, profile: ProfileInput) -> int:
 
         regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
         if not regex.match(email):
@@ -25,12 +25,11 @@ class UserMutations:
         )
         username = email.split("@")[0]
         user.username = username
-        # user.set_password(password)
-
+        user.set_password(password)
         user.save()
-        # setattr(info.context, "userID", user.id)
-        # setattr(info.context.request, "issueNewTokens", True)
-        # setattr(info.context.request, "clientID", user.id)
+        setattr(info.context, "userID", user.id)
+        setattr(info.context.request, "issueNewTokens", True)
+        setattr(info.context.request, "clientID", user.id)
         # if not send_verification_email(user.id, email, profile.first_name):
         #     user.delete()
         #     raise Exception("Unable to send verification email")

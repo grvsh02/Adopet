@@ -1,6 +1,15 @@
 import React from 'react';
+import GraphqlFetch from "../utils/graphqlFetch";
 
-export default function Login() {
+const Login = () => {
+
+    // GraphqlFetch({
+    //     query: ,
+    //     variables: ,
+    // }).then((data) => {
+    //
+    // }
+
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md shadow-[#ff4c68] lg:max-w-xl">
@@ -94,3 +103,5 @@ export default function Login() {
         </div>
     );
 }
+
+export default Login;

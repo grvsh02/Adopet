@@ -1,6 +1,13 @@
 import React from 'react';
 
-export default function Signup() {
+const Signup = () => {
+
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [confirmPassword, setConfirmPassword] = React.useState('');
+    const [firstName, setFirstName] = React.useState('');
+    const [lastName, setLastName] = React.useState('');
+
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md shadow-[#ff4c68] lg:max-w-xl">
@@ -8,6 +15,30 @@ export default function Signup() {
                     Sign up
                 </h1>
                 <form className="mt-6">
+                    <div className="mb-2">
+                        <label
+                            htmlFor="text"
+                            className="block text-sm font-semibold text-gray-800"
+                        >
+                            First Name
+                        </label>
+                        <input
+                            type="email"
+                            className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
+                        />
+                    </div>
+                    <div className="mb-2">
+                        <label
+                            htmlFor="text"
+                            className="block text-sm font-semibold text-gray-800"
+                        >
+                            Last Name
+                        </label>
+                        <input
+                            type="email"
+                            className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
+                        />
+                    </div>
                     <div className="mb-2">
                         <label
                             htmlFor="email"
@@ -105,3 +136,5 @@ export default function Signup() {
         </div>
     );
 }
+
+export default Signup;
