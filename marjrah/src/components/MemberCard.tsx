@@ -10,11 +10,10 @@ type MemberCard = {
 }
 const MemberCardContainer = styled('div')`
     width: 300px;
-    height: 300px;
+    height: 350px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgb(255,76,104), 0 2px 4px -2px rgb(255,76,104);
-    margin: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +28,7 @@ const MemberCard = ({name, img, email}: MemberCard) => {
     return (
         <MemberCardContainer>
             <img src={img} alt="member"/>
-            <h1>{name}</h1>
+            <h1 className="m-3">{name}</h1>
             <h2>{email}</h2>
         </MemberCardContainer>
     )
