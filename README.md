@@ -103,4 +103,4 @@ The founders of AdoPet are a 4 membered team with a `vision` to `create a better
 - [Django](https://docs.djangoproject.com/en/4.1/)
 - [PostgreSQL](https://www.postgresql.org/docs/)
 - [Strawberry](https://strawberry.rocks/docs)
-
+- [React](https://github.com/grvsh02/Adopet/blob/main/marjrah/README.md)
