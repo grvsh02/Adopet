@@ -1,12 +1,42 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Banner from './Banner';
 import Footer from './';
 import ProductCard from "../../components/petCard";
 import SortBar from "./sortBar";
 import FilterBar from "../../components/filterBar";
+import GraphQLFetch from "../../utils/graphqlFetch";
 
 
 const FindPetsPage = () => {
+
+    const [pets, setPets] = React.useState([]);
+    const [error, setError] = React.useState(null);
+
+    const QUERY = `
+      query {
+          pets{
+            pets{
+              id
+              name
+              age
+              breed
+            }
+            count
+            pages
+          }
+        }`;
+
+    useEffect(() => {
+        GraphQLFetch({
+            query: QUERY,
+        }).then((data) => {
+            if (data.errors) {
+                setError(data.errors);
+            }
+            else setPets(data.data.pets.pets);
+        });
+    }, []);
+
     return (
         <div className="flex flex-col items-center border-2 border-b-blue-800">
             <Banner/>
@@ -16,15 +46,9 @@ const FindPetsPage = () => {
                     <FilterBar/>
                 </div>
                 <div className="mt-6 w-5/6 items-center flex flex-wrap">
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
-                    <ProductCard brand="Apple" name="Golden Retriver"/>
+                    {pets.map((pet:any) => (
+                        <ProductCard brand={pet.breed} name={pet.name}/>
+                    ))}
                 </div>
             </div>
         </div>

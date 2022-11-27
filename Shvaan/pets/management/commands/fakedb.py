@@ -1,11 +1,7 @@
 from django.db import transaction
 from django.core.management.base import BaseCommand
-
-from pets.models import Pet
 from pets.factories import PetFactory
-from user.models import User
 from user.factories import UserFactory
-from blogs.models import Post, Category
 from blogs.factories import PostFactory, CategoryFactory
 
 Num_Products = 1000
