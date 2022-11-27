@@ -19,7 +19,7 @@ const MemberCardContainer = styled('div')`
     align-items: center;
     justify-content: center;
     img {
-        width: 200px;
+        width: 230px;
         height: 200px;
     }
  `;

@@ -32,6 +32,6 @@ class Command(BaseCommand):
         self.stdout.write("Creating categories...")
         for i in range(Num_Services):
             CategoryFactory()
-        self.stdout.write("Creating users...")
-        for i in range(Num_Services):
-            UserFactory()
+        # self.stdout.write("Creating users...")
+        # for i in range(Num_Services):
+        #     UserFactory()
