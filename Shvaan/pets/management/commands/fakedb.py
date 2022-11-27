@@ -1,5 +1,8 @@
 from django.db import transaction
 from django.core.management.base import BaseCommand
+from pets.models import Pet
+from blogs.models import Category, Post
+from user.models import User
 from pets.factories import PetFactory
 from user.factories import UserFactory
 from blogs.factories import PostFactory, CategoryFactory
