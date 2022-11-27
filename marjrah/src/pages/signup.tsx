@@ -1,20 +1,50 @@
 import React from 'react';
+import GraphqlFetch from "../utils/graphqlFetch";
 
 const Signup = () => {
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [confirmPassword, setConfirmPassword] = React.useState('');
-    const [firstName, setFirstName] = React.useState('');
-    const [lastName, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [confirmPassword, setConfirmPassword] = React.useState("");
+    const [firstName, setFirstName] = React.useState("");
+    const [lastName, setLastName] = React.useState("");
+
+
+    const QUERY = `
+        mutation ($email: String!, $password: String!, $profile: ProfileInput!) {
+      signup(email: $email, password: $password, profile: $profile)
+    }
+    `
+
+    const signUp = () => {
+
+        if (confirmPassword !== password) {
+            alert("Passwords do not match");
+        }
+
+        GraphqlFetch({
+            query: QUERY,
+            variables: {
+                email: email,
+                password: password,
+                profile: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email
+                }
+            }
+        }).then((data) => {
+            console.log(data);
+        });
+    }
 
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-            <div className="w-full p-6 m-auto bg-white rounded-md shadow-md shadow-[#ff4c68] lg:max-w-xl">
+            <div className="w-full p-6 m-auto bg-white rounded-md border-2 border-[#ff4c68] lg:max-w-xl">
                 <h1 className="text-3xl font-semibold text-center text-[#ff4c68] ">
                     Sign up
                 </h1>
-                <form className="mt-6">
+                <div className="mt-6">
                     <div className="mb-2">
                         <label
                             htmlFor="text"
@@ -24,6 +54,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="email"
+                            onChange={(e) => setFirstName(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -36,6 +67,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="email"
+                            onChange={(e) => setLastName(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -48,6 +80,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="email"
+                            onChange={(e) => setEmail(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -60,6 +93,7 @@ const Signup = () => {
                         </label>
                         <input
                             type="password"
+                            onChange={(e) => setPassword(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-rose-500 bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                         <label
@@ -70,22 +104,17 @@ const Signup = () => {
                         </label>
                         <input
                             type="password"
+                            onChange={(e) => setConfirmPassword(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-rose-500 bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
 
                     </div>
-                    <a
-                        href="#"
-                        className="text-xs text-[#ff4c68] hover:underline"
-                    >
-                        Forget Password?
-                    </a>
                     <div className="mt-6">
-                        <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#ff4c68] rounded-md hover:bg-rose-600 focus:outline-none focus:bg-[#ff4c68]">
-                            Sign Up
+                        <button onClick={() => signUp()} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#ff4c68] rounded-md hover:bg-rose-600 focus:outline-none focus:bg-[#ff4c68]">
+                            Sign up
                         </button>
                     </div>
-                </form>
+                </div>
                 <div className="relative flex items-center justify-center w-full mt-6 border border-t">
                     <div className="absolute px-5 bg-white">Or</div>
                 </div>
@@ -124,12 +153,12 @@ const Signup = () => {
 
                 <p className="mt-8 text-xs font-light text-center text-gray-700">
                     {" "}
-                    Don't have an account?{" "}
+                    Already Have a account ?{" "}
                     <a
                         href="#"
                         className="font-medium text-[#ff4c68] hover:underline"
                     >
-                        Sign up
+                        Login Now
                     </a>
                 </p>
             </div>

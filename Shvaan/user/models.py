@@ -4,7 +4,8 @@ from django.core.validators import MaxLengthValidator, MinLengthValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
-class User(models.Model):
+
+class User(AbstractUser):
     id = models.AutoField(primary_key=True)
     email = models.EmailField(
         unique=True,

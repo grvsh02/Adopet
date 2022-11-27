@@ -67,6 +67,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Shvaan.urls'
 
+AUTHENTICATION_BACKENDS = ['strawberry_jwt_auth.utils.authentication.AuthenticationBackend']
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
