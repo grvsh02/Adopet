@@ -3,20 +3,35 @@ import GraphqlFetch from "../utils/graphqlFetch";
 
 const Login = () => {
 
-    // GraphqlFetch({
-    //     query: ,
-    //     variables: ,
-    // }).then((data) => {
-    //
-    // }
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    const QUERY = `
+        mutation ($email: String!, $password: String!) {
+      login(email: $email, password: $password)
+    }
+    `
+    const login = () => {
+        GraphqlFetch({
+            query: QUERY,
+            variables: {
+                email: email,
+                password: password
+            },
+        }).then((data) => {
+            if (data.data?.login === true){
+                alert("Logged in");
+            }
+        })
+    }
 
     return (
         <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-            <div className="w-full p-6 m-auto bg-white rounded-md shadow-md shadow-[#ff4c68] lg:max-w-xl">
+            <div className="w-full p-6 m-auto bg-white rounded-md border-2 border-[#ff4c68] lg:max-w-xl">
                 <h1 className="text-3xl font-semibold text-center text-[#ff4c68] ">
                     Sign in
                 </h1>
-                <form className="mt-6">
+                <div className="mt-6">
                     <div className="mb-2">
                         <label
                             htmlFor="email"
@@ -26,7 +41,8 @@ const Login = () => {
                         </label>
                         <input
                             type="email"
-                            className=" w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="block w-full px-4 py-2 mt-2 text-[#ff4c68] bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -38,6 +54,7 @@ const Login = () => {
                         </label>
                         <input
                             type="password"
+                            onChange={(e) => setPassword(e.target.value)}
                             className="block w-full px-4 py-2 mt-2 text-rose-500 bg-white border rounded-md focus:border-rose-400 focus:ring-[#ff4c68] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -48,11 +65,11 @@ const Login = () => {
                         Forget Password?
                     </a>
                     <div className="mt-6">
-                        <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#ff4c68] rounded-md hover:bg-rose-600 focus:outline-none focus:bg-[#ff4c68]">
+                        <button onClick={() => login()} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#ff4c68] rounded-md hover:bg-rose-600 focus:outline-none focus:bg-[#ff4c68]">
                             Login
                         </button>
                     </div>
-                </form>
+                </div>
                 <div className="relative flex items-center justify-center w-full mt-6 border border-t">
                     <div className="absolute px-5 bg-white">Or</div>
                 </div>

@@ -3,7 +3,6 @@ import strawberry
 # from homezy_backend.utils.email import send_verification_email
 from user.graphql.inputs.user import ProfileInput
 from strawberry_jwt_auth.decorator import login_required
-from django.contrib.auth import authenticate
 from ..models import User
 import re
 
@@ -51,11 +50,10 @@ class UserMutations:
 
     @strawberry.mutation
     def login(self, info, email: str, password: str) -> bool:
+        from django.contrib.auth import authenticate
         user = authenticate(email=email, password=password)
         if user is None:
             raise Exception("Invalid credentials")
-        if not user.isVerified:
-            raise Exception("Email not verified")
         setattr(info.context, "userID", user.id)
         setattr(info.context.request, "issueNewTokens", True)
         setattr(info.context.request, "clientID", user.id)

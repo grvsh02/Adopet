@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import logo from "../assets/Adopet_logo.png"
+import graphqlFetch from "../utils/graphqlFetch";
 
 const customStyles = {
     content: {
@@ -56,8 +57,18 @@ export const PageLinkContainer = styled.div`
 const Navbar = () => {
 
     const [stickyClass, setStickyClass] = useState('relative');
+    const [user, setUser] = useState(false);
 
     useEffect(() => {
+
+        graphqlFetch({
+            query: `query {user {id}}`
+        }).then((data) => {
+            if (data.user) {
+                setUser(true)
+            }
+        })
+
         window.addEventListener('scroll', stickNavbar);
 
         return () => {
@@ -129,14 +140,21 @@ const Navbar = () => {
 
                     <Link to="/">
                         <div className="hidden md:block hover:bg-button-primary px-4 py-1 rounded-xl">
-                            <div className="flex">
+                            {user ? (
                                 <PageLinkContainer>
-                                    <a className="mx-3">Login</a>
+                                    <a className="mx-3">Logout</a>
                                 </PageLinkContainer>
-                                <PageLinkContainer>
-                                    <a className="mx-3">SignUp</a>
-                                </PageLinkContainer>
-                            </div>
+                            ): (
+                                <div className="flex">
+                                    <PageLinkContainer>
+                                        <a className="mx-3">Login</a>
+                                    </PageLinkContainer>
+                                    <PageLinkContainer>
+                                        <a className="mx-3">SignUp</a>
+                                    </PageLinkContainer>
+                                </div>
+                            )}
+
                         </div>
                     </Link>
                     <div className="-mr-2 flex md:hidden">
