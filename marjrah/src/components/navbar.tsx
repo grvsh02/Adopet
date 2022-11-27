@@ -83,7 +83,7 @@ const Navbar = () => {
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
                                 <Link
-                                    to="/"
+                                    to="/home"
                                     className=" hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
@@ -92,7 +92,7 @@ const Navbar = () => {
                                 </Link>
 
                                 <Link
-                                    to="/"
+                                    to="/find-pets"
                                     className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
@@ -108,7 +108,7 @@ const Navbar = () => {
                                     </PageLinkContainer>
                                 </Link>
                                 <Link
-                                    to="/"
+                                    to="/aboutus"
                                     className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
