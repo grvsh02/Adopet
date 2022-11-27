@@ -1,5 +1,6 @@
 import blogs from "../../assets/blogs.jpg"
 import pet from "../../assets/catndog.jpg"
+import aboutus from "../../assets/aboutus-home.jpg"
 
 
 const cards = [
@@ -15,15 +16,15 @@ const cards = [
     },
     {
         id: 3,
-        // image: hamster,
+        image: aboutus,
         title: "About us",
     },
 ];
 
 const DiscoverCard = ({ card }: any) => {
     return (
-        <div className="relative rounded-xl overflow-hidden cursor-pointer h-2/3 -mt-14 scale-auto hover:scale-105 transition-transform">
-            <img src={card.image} alt="discover_image" />
+        <div className="relative rounded-xl overflow-hidden cursor-pointer h-2/3 -mt-14 scale-auto hover:scale-105  transition-transform">
+            <img className="object-fit" src={card.image} alt="discover_image" />
             <div className="absolute bottom-10 capitalize left-10 text-white font-bold md:text-[50px] text-[40px]">
                 {card.title}
             </div>
@@ -33,8 +34,8 @@ const DiscoverCard = ({ card }: any) => {
 
 const Discover = () => {
     return (
-        <section className="mt-14">
-            <div className="md:w-11/12 w-full md:px-0 px-3 mx-auto">
+        <section className="mt-36 ">
+            <div className="md:w-4/5 md:px-0 px-3 mx-auto">
                 <div>
                     <h1 className={`md:text-[40px] text-[30px] font-bold uppercase`}>Discover</h1>
                     <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center lg:gap-14 gap-4">

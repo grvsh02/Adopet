@@ -12,9 +12,9 @@ const Home = () => {
         <div className="flex flex-col items-center mb-28">
             <Banner/>
             <Working/>
-            <Reviews/>
             <GetStarted/>
             <Discover/>
+            <Reviews/>
         </div>
     )
 }

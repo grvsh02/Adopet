@@ -27,7 +27,7 @@ const MemberCardContainer = styled('div')`
 const MemberCard = ({name, img, email}: MemberCard) => {
     return (
         <MemberCardContainer>
-            <img src={img} alt="member"/>
+            <img className="object-cover" src={img} alt="member"/>
             <h1 className="m-3">{name}</h1>
             <h2>{email}</h2>
         </MemberCardContainer>

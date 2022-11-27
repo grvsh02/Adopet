@@ -1,8 +1,8 @@
-import img from "../../assets/donate.png"
+import img from "../../assets/petcare.png"
 
 const GetStarted = () => {
     return (
-        <section className="mt-52">
+        <section className="mt-20">
             <div className="md:w-11/12 w-full md:px-0 px-3 mx-auto">
                 <div className="bg-quiz-bg h-auto sm:bg-cover bg-center bg-no-repeat bg-[#ff4c68] rounded-xl relative">
                     <article className="py-24 md:px-14 px-4 md:w-9/12 md:mx-0 mx-auto md:text-left text-center leading-none">
@@ -17,8 +17,8 @@ const GetStarted = () => {
                             <span className="relative invisible">Donate</span>
                         </button>
                     </article>
-                    <div className="absolute lg:right-[10%] right-[4%] lg:-top-[10%] -top-[5%] md:block hidden">
-                        <img src={img} alt="illustration" className="w-72" />
+                    <div className="absolute lg:right-[5%] right-[4%] lg:-top-[-5%] md:block hidden">
+                        <img src={img} alt="illustration" className="h-[340px]" />
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ const NewsCard = ({ text }:any) => (
 
 const Reviews = () => {
     return (
-        <section className="my-20">
+        <section className="mt-20">
             <div className="md:w-11/12 w-full md:px-0 px-3 mx-auto">
                 <div className="pt-14 pb-4 h-[700px] overflow-auto bg-rose-100 flex items-center lg:flex-nowrap flex-wrap gap-1">
                     <article className="lg:w-1/2 w-full lg:pb-0 pb-4 flex flex-col lg:items-start items-center lg:ml-14 lg:mt-52">
