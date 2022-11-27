@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import FindPetsPage from "../pages/findPets";
 import Login from "../pages/login";
-import Aboutus from "../pages/aboutus";
+import Aboutus from "../pages/aboutus/aboutus";
 
 const PageRouter = () => {
     return (
