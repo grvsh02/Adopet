@@ -1,8 +1,8 @@
 import React from "react";
 import dog from "../../assets/dog.png"
 import CountUp from 'react-countup';
-import pawprint from "../../assets/pawprint.png"
 import Banner from "./banner";
+import OurTeam from "./our-team";
 
 
 
@@ -42,6 +42,7 @@ const Aboutus = () => {
                        </p>
                 </div>
             </div>
+            <OurTeam/>
         </div>
   );
 }

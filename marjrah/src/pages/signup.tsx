@@ -18,7 +18,7 @@ const Signup = () => {
                     <div className="mb-2">
                         <label
                             htmlFor="text"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="relative flex flex-row text-sm font-semibold text-gray-800"
                         >
                             First Name
                         </label>
@@ -30,7 +30,7 @@ const Signup = () => {
                     <div className="mb-2">
                         <label
                             htmlFor="text"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="relative flex flex-row text-sm font-semibold text-gray-800"
                         >
                             Last Name
                         </label>
@@ -42,7 +42,7 @@ const Signup = () => {
                     <div className="mb-2">
                         <label
                             htmlFor="email"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="relative flex flex-row text-sm font-semibold text-gray-800"
                         >
                             Email
                         </label>
@@ -54,7 +54,7 @@ const Signup = () => {
                     <div className="mb-2">
                         <label
                             htmlFor="password"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="relative flex flex-row text-sm font-semibold text-gray-800"
                         >
                             Password
                         </label>
@@ -64,7 +64,7 @@ const Signup = () => {
                         />
                         <label
                             htmlFor="password"
-                            className="block text-sm font-semibold text-gray-800"
+                            className="relative flex flex-row text-sm font-semibold text-gray-800"
                         >
                             Re-type Password
                         </label>
@@ -82,7 +82,7 @@ const Signup = () => {
                     </a>
                     <div className="mt-6">
                         <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#ff4c68] rounded-md hover:bg-rose-600 focus:outline-none focus:bg-[#ff4c68]">
-                            Login
+                            Sign Up
                         </button>
                     </div>
                 </form>
