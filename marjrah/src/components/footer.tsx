@@ -5,8 +5,8 @@ export const PageLinkContainer = styled.div`
   a {
     background-image: linear-gradient(
             to right,
-            #6a9b30,
-            #6a9b30 50%,
+            #ff4c68,
+            #ff4c68 50%,
             #ffffff 50%
     );
     background-size: 200% 100%;
@@ -22,7 +22,7 @@ export const PageLinkContainer = styled.div`
 
   a:before {
     content: '';
-    background: #6a9b30;
+    background: #ff4c68;
     display: block;
     position: absolute;
     bottom: -3px;
