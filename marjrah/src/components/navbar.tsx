@@ -107,11 +107,11 @@ const Navbar = () => {
                                     className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
-                                        <a>Find Pets</a>
+                                        <a href="/findPets">Find Pets</a>
                                     </PageLinkContainer>
                                 </Link>
                                 <Link
-                                    to="/"
+                                    to="/blogs"
                                     className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 >
                                     <PageLinkContainer>
@@ -146,12 +146,22 @@ const Navbar = () => {
                                 </PageLinkContainer>
                             ): (
                                 <div className="flex">
-                                    <PageLinkContainer>
-                                        <a className="mx-3">Login</a>
-                                    </PageLinkContainer>
-                                    <PageLinkContainer>
-                                        <a className="mx-3">SignUp</a>
-                                    </PageLinkContainer>
+                                    <Link
+                                        to="/login"
+                                        className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        <PageLinkContainer>
+                                            <a href="/login" className="mx-3">Login</a>
+                                        </PageLinkContainer>
+                                    </Link>
+                                        <Link
+                                            to="/sign-up"
+                                            className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                        >
+                                        <PageLinkContainer>
+                                            <a href="/sign-up" className="mx-3">SignUp</a>
+                                        </PageLinkContainer>
+                                    </Link>
                                 </div>
                             )}
 

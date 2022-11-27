@@ -102,14 +102,14 @@ const BlogCard = ({ expert, name = "", imgUrl, Date, blogProps = {}, onClick = (
         </BlogImageContainer>
         <BlogDetailsContainer>
             <div className="flex justify-between">
-                <div style={{ fontSize: '10px', color: "#4f4f4f", fontWeight: 300 }} className="pt-1 pr-1 pb-1">
+                <div style={{ fontSize: '12px', color: "#4f4f4f", fontWeight: 600 }} className="pt-1 pr-1 pb-1">
                     {expert}
                 </div>
-                <div style={{ fontSize: '10px', color: "#bdbdbd",  }} className="pt-1 pb-1 pr-1">
+                <div style={{ fontSize: '12px', color: "#bdbdbd", fontWeight: 600  }} className="pt-1 pb-1 pr-1">
                     {Date}
                 </div>
             </div>
-            <div style={{ fontSize: '10px', color: "#030e19", fontWeight: 600 }} className="pt-1 pr-1 pb-1">
+            <div style={{ fontSize: '16px', color: "#030e19", fontWeight: 600 }} className="pt-1 pr-1 pb-1">
                 {name?.length > 20 ? name.substring(0, 25) + "..." : name}
             </div>
             <div className="flex">

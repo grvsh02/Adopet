@@ -13,7 +13,7 @@ class PetsQuery:
             keyword: Optional[str] = None,
             category: Optional[str] = None,
             sort: Optional[str] = None,
-            per_page: Optional[int] = 10,
+            per_page: Optional[int] = 20,
             page_no: Optional[int] = 1,) -> PetsType:
         pets = Pet.objects.all()
         if keyword is not None:

@@ -20,7 +20,8 @@ const Login = () => {
             },
         }).then((data) => {
             if (data.data?.login === true){
-                alert("Logged in");
+                alert("Login Successful");
+                // window.location.href = "/home";
             }
         })
     }

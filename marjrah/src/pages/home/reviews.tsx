@@ -24,7 +24,7 @@ const Reviews = () => {
                             Know what others say
                         </h1>
                     </article>
-                    <div className="flex gap-4 sm:flex-nowrap flex-wrap lg:w-1/2 mx-auto">
+                    <div className="flex gap-4 sm:flex-nowrap flex-wrap lg:w-1/2 mx-5">
                         <div className="rounded-md w-full flex flex-col gap-3 items-center">
                             <NewsCard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique sed arcu parturient nunc, neque euismod mollis tincidunt. Consectetur imperdiet viverra a massa felis scelerisque lectus " />
                             <NewsCard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique sed arcu parturient nunc, " />

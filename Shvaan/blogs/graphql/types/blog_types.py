@@ -6,4 +6,4 @@ import strawberry
 class PostType:
     id: int
     title: str
-    description: str
+    content: str

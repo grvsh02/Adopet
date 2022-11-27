@@ -10,6 +10,7 @@ type ProductCard = {
     onClick?: (id: number) => void;
     addToCart?: () => void;
     addToFavorite?: () => void;
+    age?: number;
 }
 
 type ProductProps = {
@@ -24,7 +25,7 @@ const ProductCardContainer = styled('div')`
   height: 321px;
   width: 267px;
   padding: 20px;
-  margin: 10px;
+  margin: 15px;
   background: #fff;
   transform: scale(1);
   transition: box-shadow 0.2s, transform 0.1s;
@@ -75,7 +76,7 @@ const ProductImage = styled('div')<imageProp>`
 `
 
 
-const ProductCard = ({ brand, name = "", imgUrl, price, productProps = {}, onClick = () => {}, addToFavorite = () => {}, addToCart = () => {}  }: ProductCard) =>  (
+const ProductCard = ({ brand, name = "", imgUrl, price, productProps = {}, age, onClick = () => {}, addToFavorite = () => {}, addToCart = () => {}  }: ProductCard) =>  (
     <ProductCardContainer onClick={() => onClick}>
         <ProductImageContainer className="static">
             <ProductImage className="absolute" imgUrl={imgUrl}>
@@ -85,21 +86,17 @@ const ProductCard = ({ brand, name = "", imgUrl, price, productProps = {}, onCli
             </OptionsContainer>
         </ProductImageContainer>
         <ProductDetailsContainer>
-            <div className="flex justify-between">
-                <div style={{ fontSize: '10px', color: "#4f4f4f", fontWeight: 300 }} className="pt-1 pr-1 pb-1">
-                    {brand}
-                </div>
-            </div>
-            <div style={{ fontSize: '10px', color: "#030e19", fontWeight: 600 }} className="pt-1 pr-1 pb-1">
+            <div style={{ fontSize: '12px', color: "#030e19", fontWeight: 600 }} className="pt-1 pr-1 pb-1">
                 {name?.length > 20 ? name.substring(0, 25) + "..." : name}
             </div>
-            <div className="flex">
-                {productProps.strikePrice &&
-                    <div style={{ fontSize: '10px', color: "#bdbdbd", textDecoration: "line-through" }} className="pt-2.5 pb-1 pr-1">
-                        ₹{productProps.strikePrice}
-                    </div>
-                }
-                <div style={{ fontSize: '16px', color: " #f4694c" }} className="pt-1 pr-1 pb-1">
+            <div className="flex justify-between">
+                <div style={{ fontSize: '12px', color: "#4f4f4f", fontWeight: 500 }} className="pt-1 pr-1 pb-1">
+                    Breed: {brand}
+                </div>
+            </div>
+            <div className="flex justify-between">
+                <div style={{ fontSize: '12px', color: "#4f4f4f", fontWeight: 500 }} className="pt-1 pr-1 pb-1">
+                    age: {age}
                 </div>
             </div>
         </ProductDetailsContainer>

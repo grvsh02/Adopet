@@ -34,7 +34,7 @@ const Signup = () => {
                 }
             }
         }).then((data) => {
-            console.log(data);
+            window.location.href = "/home";
         });
     }
 

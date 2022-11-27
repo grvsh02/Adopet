@@ -8,7 +8,7 @@ from user.factories import UserFactory
 from blogs.factories import PostFactory, CategoryFactory
 
 Num_Products = 1000
-Num_Services = 500
+Num_Services = 100
 
 
 class Command(BaseCommand):
