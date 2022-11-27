@@ -12,15 +12,16 @@ We do this by arranging `adoption awareness` on our platform. These adoption awa
 - [The Team](#the-team)
 - [Documentation](#documentation)
 ## Getting Started
-Taking the very first step, you would be needed to clone the `bhoomi_backend` repository using git:
+Taking the very first step, you would be needed to clone the `AdoPet` repository using git:
 
 ```bash
-git clone https://github.com/grvsh02/homezy_backend.git
+git clone https://github.com/grvsh02/Adopet.git
 ```
 
-A standard `requirements.txt` file has been provided, which contains all python dependencies required to run the plateform:
+A standard `requirements.txt` file has been provided for backend, which contains all python dependencies required to run the plateform:
 
 ```bash
+cd Shvaan
 pip install -r requirements.txt
 ```
 
