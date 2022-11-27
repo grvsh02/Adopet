@@ -77,12 +77,12 @@ Which will start your application at `http://localhost:8000/`.
 
 ## Modules
 - Complaint Box 📮
-- Home 
-- Blogs 
+- Home 🏠
+- Blogs ✍🏻
 - About Us
-- Count of no of animals rescued 
+- Count of no of animals rescued 🐕
 
-## Technology Stack used
+## Technology Stack used 👨‍💻
 
 - Frontend - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -91,14 +91,14 @@ Which will start your application at `http://localhost:8000/`.
 ![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white) , Stawberry
 - Database - ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-## The Team
+## The Team 
 The founders of AdoPet are a 4 membered team with a `vision` to `create a better world for the voiceless creatures` that are often left on the streets or are left out by incapable families .
 - [Gaurav Sharma](https://www.github.com/grvsh02)
 - [Prashant Gehlot](https://www.github.com/Prashant9683)
 - [Yash Katyan](https://github.com/yakatyansh)
 - [Saumy Shukla](https://github.com/saumy4854)
 
-## Documentation
+## Documentation 📄
 
 - [Django](https://docs.djangoproject.com/en/4.1/)
 - [PostgreSQL](https://www.postgresql.org/docs/)
