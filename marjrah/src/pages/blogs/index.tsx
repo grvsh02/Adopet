@@ -13,9 +13,11 @@ const FindPetsPage = () => {
     const QUERY = `
       query {
           posts{
-            id
-            title
-            content
+            posts{
+                id
+                title
+                content
+            }
           }
         }
      `;
@@ -27,7 +29,7 @@ const FindPetsPage = () => {
             if (data.errors) {
                 setError(data.errors);
             }
-            else setBlogs(data.data.posts);
+            else setBlogs(data.data.posts.posts);
         });
     }, []);
 
