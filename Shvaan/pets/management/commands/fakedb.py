@@ -1,5 +1,8 @@
 from django.db import transaction
 from django.core.management.base import BaseCommand
+from pets.models import Pet
+from blogs.models import Category, Post
+from user.models import User
 from pets.factories import PetFactory
 from user.factories import UserFactory
 from blogs.factories import PostFactory, CategoryFactory
@@ -13,6 +16,11 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
+        self.stdout.write("Deleting old data...")
+        Pet.objects.all().delete()
+        Post.objects.all().delete()
+        Category.objects.all().delete()
+        User.objects.all().delete()
 
         self.stdout.write("Creating new data...")
         self.stdout.write("Creating pets...")

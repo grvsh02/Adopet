@@ -9,5 +9,5 @@ class PetFactory(DjangoModelFactory):
 
     name = factory.Faker('name')
     description = factory.Faker('text')
-    breed = factory.Faker('text')
+    breed = factory.Faker('name')
     age = factory.Faker('random_int', min=1, max=20)
