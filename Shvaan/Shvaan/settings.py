@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'strawberry.django',
     'tinymce',
+    'strawberry_jwt_auth',
     'user',
     'pets',
     'blogs',
@@ -134,3 +135,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTHENTICATION_BACKENDS = [
+#     "strawberry_jwt_auth.backends.JWTAuthBackend",
+# ]

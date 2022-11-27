@@ -47,3 +47,4 @@ strawberry-graphql==0.114.0
 typing_extensions==4.3.0
 urllib3==1.26.10
 django-tinymce==3.5.0
+strawberry-jwt-auth-0.2.2==0.2.2

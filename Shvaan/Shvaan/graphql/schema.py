@@ -1,6 +1,7 @@
 import strawberry
 from strawberry.extensions import QueryDepthLimiter, ValidationCache, ParserCache, AddValidationRules
 from strawberry.tools import merge_types
+from strawberry_jwt_auth.extension import JWTExtension
 
 
 from user.graphql.mutations import UserMutations
@@ -14,6 +15,7 @@ Mutations = merge_types('Mutations', (UserMutations, PetManageMutations, ManageP
 Query = merge_types('Queries', (ProductQueries, PetsQuery, PostQuery, ))
 
 extensions = [
+    JWTExtension,
     QueryDepthLimiter(max_depth=10),
     ParserCache(maxsize=100),
     ValidationCache(maxsize=100),

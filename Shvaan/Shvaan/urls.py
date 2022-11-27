@@ -4,12 +4,12 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from strawberry.django.views import GraphQLView
 from Shvaan.graphql.schema import schema
+from strawberry_jwt_auth.views import strawberry_auth_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
+    path('graphql/', strawberry_auth_view(GraphQLView.as_view(schema=schema))),
     path('tinymce/', include('tinymce.urls')),
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns = [
