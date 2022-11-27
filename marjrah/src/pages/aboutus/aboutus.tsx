@@ -1,22 +1,16 @@
 import React from "react";
-import dog from "../assets/dog.png"
+import dog from "../../assets/dog.png"
 import CountUp from 'react-countup';
-import pawprint from "../assets/pawprint.png"
+import pawprint from "../../assets/pawprint.png"
+import Banner from "./banner";
 
 
 
 const Aboutus = () => {
     return (
-        <div className="flex flex-col">
-        <div className=" h-2/5 w-full bg-[#ff4c68]  mb-7">
-            <div className="flex items-center justify-between h-full">
-                <div className="text-white font-semibold text-4xl ml-32">
-                    <p>About Us</p>
-            </div>
-        </div>
-            <img src={pawprint} alt="dog" className="mx-32 my-6"/>
-        </div>
-        <div className="relative flex flex-row mb-7">
+        <div className="flex flex-col items-center ">
+            <Banner/>
+        <div className="relative flex flex-row mt-7 mb-7">
         <div className=" flex flex-row pb-10 w-2/5">
             <p className="text-2xl text-center text-gray-700 ml-20">
                 We, the team of AdoPet, are a group of people working towards the betterment of the untended animals on the streets through our technological innovations. We do this by arranging adoption awareness on our platform. These adoption awareness invites rescuers from all over the city to bring their rescued animals or and be able to meet with so many potential adopting families. All the funds that we collect as donations, go towards resources of the these voiceless creatures
@@ -27,8 +21,8 @@ const Aboutus = () => {
         </div>
         </div>
 
-            <div className="relative flex flex-row mt-7">
-                <div className=" grid grid-rows-2 grid-flow-col gap-2 w-2/5 pr-60 mr-60 ml-7 mb-7 object-right-top">
+            <div className="relative flex flex-row mt-7 items-center justify-center">
+                <div className=" grid grid-rows-2 grid-flow-col gap-2 w-2/5 pr-60 mr-60 ml-7 mb-7 ">
                     <div className="mt-7">Animals rescued so far
                         <div className="text-rose-500 text-5xl"><CountUp end={69} duration={2}/></div>
                     </div>
