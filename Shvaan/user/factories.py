@@ -6,8 +6,6 @@ from .models import User
 class UserFactory(DjangoModelFactory):
     class Meta:
         model = User
-
-    username = factory.Faker('name')
     first_name = factory.Faker('name')
     last_name = factory.Faker('name')
     email = factory.Faker('email')
